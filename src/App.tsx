@@ -76,10 +76,10 @@ const TC_POINTS = [
 // ──────────────────────────────────────────────
 function TCBlock({ height = 'h-56' }: { height?: string }) {
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-200">
-        <Sparkles className="w-4 h-4 text-violet-600 flex-shrink-0" />
-        <p className="text-xs font-semibold text-gray-900 leading-snug">
+    <div className="border border-[#E4E4E7] rounded-lg overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-3 bg-[#FAFAFA] border-b border-[#E4E4E7]">
+        <Sparkles className="w-4 h-4 text-[#3838F9] flex-shrink-0" />
+        <p className="text-xs font-semibold text-[#09090B] leading-snug">
           Términos y condiciones para el uso de herramientas de Inteligencia Artificial en Simetrik
         </p>
       </div>
@@ -87,7 +87,7 @@ function TCBlock({ height = 'h-56' }: { height?: string }) {
         <ScrollAreaPrimitive.Viewport className="h-full w-full">
           <ol className="px-4 py-3 space-y-3">
             {TC_POINTS.map((p, i) => (
-              <li key={i} className="text-xs text-gray-700 leading-relaxed">
+              <li key={i} className="text-xs text-[#3F3F46] leading-relaxed">
                 <span className="font-semibold">{i + 1}. {p.title}</span>{' '}
                 {p.body}
               </li>
@@ -98,7 +98,7 @@ function TCBlock({ height = 'h-56' }: { height?: string }) {
           orientation="vertical"
           className="flex touch-none select-none transition-colors w-2.5 border-l border-l-transparent p-[1px]"
         >
-          <ScrollAreaPrimitive.Thumb className="relative flex-1 rounded-full bg-gray-300" />
+          <ScrollAreaPrimitive.Thumb className="relative flex-1 rounded-full bg-[#E4E4E7]" />
         </ScrollAreaPrimitive.Scrollbar>
       </ScrollAreaPrimitive.Root>
     </div>
@@ -122,13 +122,13 @@ function CheckRow({ checked, onChange, disabled, children }: CheckRowProps) {
         checked={checked}
         onCheckedChange={(v) => !disabled && onChange(v === true)}
         disabled={disabled}
-        className="h-4 w-4 shrink-0 rounded-sm border border-violet-600 mt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 data-[state=checked]:bg-violet-600 data-[state=checked]:text-white disabled:opacity-60 disabled:cursor-not-allowed"
+        className="h-4 w-4 shrink-0 rounded-sm border border-[#3838F9] mt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3838F9] data-[state=checked]:bg-[#3838F9] data-[state=checked]:text-white disabled:opacity-60 disabled:cursor-not-allowed"
       >
         <CheckboxPrimitive.Indicator className="flex items-center justify-center">
           <Check className="h-3 w-3" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-      <span className="text-sm text-gray-700 leading-snug">{children}</span>
+      <span className="text-sm text-[#3F3F46] leading-snug">{children}</span>
     </label>
   )
 }
@@ -150,7 +150,7 @@ function Sidebar({
   const sub = (icon: React.ReactNode, text: string) => (
     <div
       key={text}
-      className="flex items-center gap-2 pl-7 pr-3 py-[5px] text-xs rounded-md mx-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900 cursor-default"
+      className="flex items-center gap-2 pl-7 pr-3 py-[5px] text-xs rounded-md mx-1 text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#F4F4F5] cursor-default"
     >
       <span className="w-3.5 h-3.5 flex-shrink-0">{icon}</span>
       {text}
@@ -159,7 +159,7 @@ function Sidebar({
 
   const section = (label: string, children: React.ReactNode) => (
     <div className="mb-0.5">
-      <p className="px-3 pt-2 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+      <p className="px-3 pt-2 pb-1 text-[10px] font-semibold text-[#71717A] uppercase tracking-wider">
         {label}
       </p>
       {children}
@@ -167,36 +167,36 @@ function Sidebar({
   )
 
   return (
-    <aside className="w-[260px] flex-shrink-0 border-r border-gray-200 bg-white flex flex-col h-screen sticky top-0 overflow-hidden">
+    <aside className="w-[260px] flex-shrink-0 border-r border-[#27272A] bg-[#18181B] flex flex-col h-screen sticky top-0 overflow-hidden">
       {/* Logo */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[#27272A]">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-violet-600 rounded-md flex items-center justify-center">
+          <div className="w-7 h-7 bg-[#3838F9] rounded-md flex items-center justify-center">
             <span className="text-white text-xs font-bold">S</span>
           </div>
-          <span className="font-semibold text-sm text-gray-900">Simetrik</span>
+          <span className="font-semibold text-sm text-[#F4F4F5]">Simetrik</span>
         </div>
-        <Eye className="w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-600" />
+        <Eye className="w-4 h-4 text-[#71717A] cursor-pointer hover:text-[#F4F4F5]" />
       </div>
 
       {/* Workspace */}
-      <div className="flex items-center gap-2 px-3 py-2.5 border-b border-gray-200 cursor-pointer hover:bg-gray-50">
-        <div className="w-6 h-6 rounded-md bg-violet-600 flex items-center justify-center flex-shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2.5 border-b border-[#27272A] cursor-pointer hover:bg-[#27272A]">
+        <div className="w-6 h-6 rounded-md bg-[#3838F9] flex items-center justify-center flex-shrink-0">
           <span className="text-white text-xs font-bold">E</span>
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-gray-900 truncate">Espacio de trabajo</p>
-          <p className="text-[10px] text-gray-500 truncate">Nombre de la cuenta</p>
+          <p className="text-xs font-semibold text-[#F4F4F5] truncate">Espacio de trabajo</p>
+          <p className="text-[10px] text-[#A1A1AA] truncate">Nombre de la cuenta</p>
         </div>
-        <ChevronDown className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
+        <ChevronDown className="w-3.5 h-3.5 text-[#71717A] flex-shrink-0" />
       </div>
 
       {/* Search */}
-      <div className="px-3 py-2 border-b border-gray-200">
-        <div className="flex items-center gap-2 px-2 py-1.5 rounded-md border border-gray-200 text-gray-400">
+      <div className="px-3 py-2 border-b border-[#27272A]">
+        <div className="flex items-center gap-2 px-2 py-1.5 rounded-md border border-[#27272A] text-[#71717A]">
           <Search className="w-3.5 h-3.5" />
-          <span className="text-xs flex-1">Buscar</span>
-          <span className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded text-gray-500">Ctrl+K</span>
+          <span className="text-xs flex-1 text-[#A1A1AA]">Buscar</span>
+          <span className="text-[10px] bg-[#27272A] px-1.5 py-0.5 rounded text-[#A1A1AA]">Ctrl+K</span>
         </div>
       </div>
 
@@ -207,8 +207,8 @@ function Sidebar({
           className={cn(
             'flex items-center gap-2 px-3 py-1.5 text-xs rounded-md mx-1 cursor-pointer mb-0.5',
             activeScreen === 'home'
-              ? 'bg-violet-50 text-violet-700 font-semibold'
-              : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
+              ? 'bg-[#27272A] text-[#F4F4F5] font-semibold border-l-2 border-[#3838F9]'
+              : 'text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#F4F4F5]'
           )}
         >
           <LayoutDashboard className="w-4 h-4 flex-shrink-0" />
@@ -218,13 +218,13 @@ function Sidebar({
         {/* Automatizar */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-gray-800 hover:bg-gray-50 rounded-md"
+          className="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-[#F4F4F5] hover:bg-[#27272A] rounded-md"
         >
           <div className="flex items-center gap-2">
-            <Zap className="w-4 h-4 text-gray-500" />
+            <Zap className="w-4 h-4 text-[#A1A1AA]" />
             Automatizar
           </div>
-          <ChevronDown className={cn('w-3.5 h-3.5 text-gray-400 transition-transform', expanded && 'rotate-180')} />
+          <ChevronDown className={cn('w-3.5 h-3.5 text-[#71717A] transition-transform', expanded && 'rotate-180')} />
         </button>
 
         {expanded && (
@@ -262,21 +262,21 @@ function Sidebar({
       </nav>
 
       {/* Bottom bar */}
-      <div className="border-t border-gray-200 px-4 py-2 flex items-center justify-between">
+      <div className="border-t border-[#27272A] px-4 py-2 flex items-center justify-between">
         {[
-          <div key="avatar" className="w-5 h-5 bg-violet-600 rounded-full flex items-center justify-center">
+          <div key="avatar" className="w-5 h-5 bg-[#3838F9] rounded-full flex items-center justify-center">
             <span className="text-white text-[9px] font-bold">E</span>
           </div>,
           <Bell key="bell" className="w-4 h-4" />,
           <Bookmark key="bk" className="w-4 h-4" />,
           <Settings
             key="settings"
-            className={cn('w-4 h-4 cursor-pointer', activeScreen === 'settings' && 'text-violet-600')}
+            className={cn('w-4 h-4 cursor-pointer', activeScreen === 'settings' ? 'text-[#3838F9]' : '')}
             onClick={() => onNavigate('settings')}
           />,
           <Layout key="layout" className="w-4 h-4" />,
         ].map((icon, i) => (
-          <button key={i} className="text-gray-400 hover:text-gray-700 p-1 rounded">
+          <button key={i} className="text-[#71717A] hover:text-[#F4F4F5] p-1 rounded">
             {icon}
           </button>
         ))}
@@ -296,14 +296,14 @@ function AIBanner({
   onClose: () => void
 }) {
   return (
-    <div className="flex items-start justify-between gap-4 bg-violet-50 border border-violet-200 rounded-lg px-4 py-3 mx-6 mt-4 flex-shrink-0">
+    <div className="flex items-start justify-between gap-4 bg-[#F4F3FF] border border-[#E4E4E7] rounded-lg px-4 py-3 mx-6 mt-4 flex-shrink-0">
       <div className="flex items-start gap-3 flex-1 min-w-0">
-        <Sparkles className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+        <Sparkles className="w-4 h-4 text-[#3838F9] mt-0.5 flex-shrink-0" />
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-violet-700 leading-snug">
+          <p className="text-sm font-semibold text-[#1E0A78] leading-snug">
             Habilitar herramientas de IA
           </p>
-          <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+          <p className="text-xs text-[#71717A] mt-0.5 leading-relaxed">
             Permite que todos los usuarios de tu cuenta accedan a las funcionalidades de IA.
             Gestiona el acceso de tu equipo desde un solo lugar. Estos ajustes se aplican a nivel de espacio de trabajo.
           </p>
@@ -312,11 +312,11 @@ function AIBanner({
       <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
         <button
           onClick={onEnable}
-          className="bg-violet-600 hover:bg-violet-700 text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-colors whitespace-nowrap"
+          className="bg-[#3838F9] hover:bg-[#2828D9] text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-colors whitespace-nowrap"
         >
           Habilitar IA
         </button>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1 rounded">
+        <button onClick={onClose} className="text-[#71717A] hover:text-[#09090B] p-1 rounded">
           <X className="w-3.5 h-3.5" />
         </button>
       </div>
@@ -355,15 +355,15 @@ function HomeScreen({
         <AIBanner onEnable={onEnableAI} onClose={onBannerClose} />
       )}
       <div className="flex-1 overflow-y-auto px-6 py-6">
-        <h1 className="text-2xl font-semibold text-gray-900 mb-1">Resumen</h1>
-        <p className="text-sm text-gray-500 mb-6">
+        <h1 className="text-2xl font-semibold text-[#09090B] mb-1">Resumen</h1>
+        <p className="text-sm text-[#71717A] mb-6">
           Encuentra la información actualizada de las fuentes, conciliaciones, usuarios y almacenamiento.
         </p>
 
         {/* Metrics */}
         <div className="grid grid-cols-4 gap-3 mb-8">
           {metrics.map((m) => (
-            <div key={m.label} className="bg-violet-600 text-white rounded-xl px-4 py-4 flex items-center gap-3">
+            <div key={m.label} className="bg-[#3838F9] text-white rounded-xl px-4 py-4 flex items-center gap-3">
               <span className="text-2xl font-bold">{m.n}</span>
               {m.icon}
               <span className="text-sm font-medium">{m.label}</span>
@@ -373,8 +373,8 @@ function HomeScreen({
 
         {/* Recent */}
         <div className="flex items-center gap-2 mb-4">
-          <ArrowLeftRight className="w-4 h-4 text-gray-400" />
-          <h2 className="text-base font-semibold text-gray-900">Reciente</h2>
+          <ArrowLeftRight className="w-4 h-4 text-[#71717A]" />
+          <h2 className="text-base font-semibold text-[#09090B]">Reciente</h2>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -382,25 +382,25 @@ function HomeScreen({
             { title: 'Fuentes', prefix: 'Fuente' },
             { title: 'Conciliaciones', prefix: 'Conciliación' },
           ].map(({ title, prefix }) => (
-            <div key={title} className="border border-gray-200 rounded-xl overflow-hidden bg-white">
-              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-                <span className="text-sm font-semibold text-gray-900">{title}</span>
-                <button className="text-xs text-violet-600 font-medium hover:underline">Ver todo</button>
+            <div key={title} className="border border-[#E4E4E7] rounded-xl overflow-hidden bg-white">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-[#E4E4E7]">
+                <span className="text-sm font-semibold text-[#09090B]">{title}</span>
+                <button className="text-xs text-[#3838F9] font-medium hover:underline">Ver todo</button>
               </div>
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="px-4 py-2 text-left text-xs font-medium text-gray-400">Nombre</th>
-                    <th className="px-4 py-2 text-right text-xs font-medium text-gray-400">Actualizado</th>
+                  <tr className="border-b border-[#E4E4E7]">
+                    <th className="px-4 py-2 text-left text-xs font-medium text-[#71717A]">Nombre</th>
+                    <th className="px-4 py-2 text-right text-xs font-medium text-[#71717A]">Actualizado</th>
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((_, i) => (
-                    <tr key={i} className="border-b border-gray-50 last:border-0 hover:bg-gray-50">
-                      <td className="px-4 py-2.5 text-xs text-gray-700">
+                    <tr key={i} className="border-b border-[#F4F4F5] last:border-0 hover:bg-[#FAFAFA]">
+                      <td className="px-4 py-2.5 text-xs text-[#3F3F46]">
                         {prefix} 2022 - 12 - 01 // Nu
                       </td>
-                      <td className="px-4 py-2.5 text-xs text-gray-400 text-right">Hoy</td>
+                      <td className="px-4 py-2.5 text-xs text-[#71717A] text-right">Hoy</td>
                     </tr>
                   ))}
                 </tbody>
@@ -412,14 +412,14 @@ function HomeScreen({
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 flex items-center gap-4 bg-gray-900 text-white px-5 py-3 rounded-xl shadow-xl">
+        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 flex items-center gap-4 bg-[#09090B] text-[#F4F4F5] px-5 py-3 rounded-xl shadow-xl">
           <p className="text-sm">
             <strong>¡Tenemos novedades!</strong> Explora las nuevas funcionalidades y mejoras que harán tu trabajo más fácil.
           </p>
-          <button className="bg-violet-600 hover:bg-violet-700 text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-colors whitespace-nowrap">
+          <button className="bg-[#3838F9] hover:bg-[#2828D9] text-white text-xs font-semibold px-3 py-1.5 rounded-md transition-colors whitespace-nowrap">
             Ver video
           </button>
-          <button onClick={() => setToast(false)} className="text-gray-400 hover:text-white">
+          <button onClick={() => setToast(false)} className="text-[#71717A] hover:text-[#F4F4F5]">
             <X className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -455,18 +455,18 @@ function AIModal({
           onInteractOutside={(e) => e.preventDefault()}
         >
           {/* Header */}
-          <div className="flex items-start justify-between px-6 pt-5 pb-4 border-b border-gray-200 flex-shrink-0">
+          <div className="flex items-start justify-between px-6 pt-5 pb-4 border-b border-[#E4E4E7] flex-shrink-0">
             <div>
-              <Dialog.Title className="text-lg font-semibold text-gray-900">
+              <Dialog.Title className="text-lg font-semibold text-[#09090B]">
                 Acuerdo de Herramientas Impulsadas por IA
               </Dialog.Title>
-              <Dialog.Description className="text-sm text-gray-500 mt-0.5">
+              <Dialog.Description className="text-sm text-[#71717A] mt-0.5">
                 Revisa y acepta los términos para habilitar las funcionalidades impulsadas por inteligencia artificial para tu organización.
               </Dialog.Description>
             </div>
             <button
               onClick={() => { reset(); onClose() }}
-              className="text-gray-400 hover:text-gray-600 p-1 rounded ml-4 flex-shrink-0"
+              className="text-[#71717A] hover:text-[#09090B] p-1 rounded ml-4 flex-shrink-0"
             >
               <X className="w-4 h-4" />
             </button>
@@ -486,28 +486,28 @@ function AIModal({
             </div>
 
             {/* Account info */}
-            <div className="relative border border-gray-200 rounded-lg p-4 bg-white">
+            <div className="relative border border-[#E4E4E7] rounded-lg p-4 bg-[#FAFAFA]">
               <div className="flex items-start gap-2.5 pr-6">
-                <Sparkles className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                <Sparkles className="w-4 h-4 text-[#3838F9] mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-violet-700 leading-snug">
+                  <p className="text-sm font-medium text-[#1E0A78] leading-snug">
                     Este acuerdo se aplicará a tu cuenta y afectará todos los usuarios de tu cuenta
                   </p>
-                  <p className="text-xs text-gray-500 mt-1.5">Cuenta: admin@company.com</p>
-                  <p className="text-xs text-gray-500">Organización: Acme Corporation (Plan Enterprise)</p>
+                  <p className="text-xs text-[#71717A] mt-1.5">Cuenta: admin@company.com</p>
+                  <p className="text-xs text-[#71717A]">Organización: Acme Corporation (Plan Enterprise)</p>
                 </div>
               </div>
-              <button className="absolute top-3 right-3 text-gray-300 hover:text-gray-500">
+              <button className="absolute top-3 right-3 text-[#A1A1AA] hover:text-[#71717A]">
                 <X className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-gray-200 flex-shrink-0">
+          <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-[#E4E4E7] flex-shrink-0">
             <button
               onClick={() => { reset(); onClose() }}
-              className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors"
+              className="px-4 py-2 text-sm font-medium text-[#3F3F46] border border-[#E4E4E7] rounded-md hover:bg-[#F4F4F5] transition-colors"
             >
               Cancelar
             </button>
@@ -517,8 +517,8 @@ function AIModal({
               className={cn(
                 'px-4 py-2 text-sm font-medium rounded-md transition-colors',
                 canSave
-                  ? 'bg-violet-600 text-white hover:bg-violet-700'
-                  : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  ? 'bg-[#3838F9] text-white hover:bg-[#2828D9]'
+                  : 'bg-[#F4F4F5] text-[#A1A1AA] cursor-not-allowed'
               )}
             >
               Guardar cambios
@@ -555,25 +555,25 @@ function SettingsScreen({
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 px-6 py-3 border-b border-gray-200 text-xs text-gray-400 flex-shrink-0">
+      <div className="flex items-center gap-1.5 px-6 py-3 border-b border-[#E4E4E7] text-xs text-[#71717A] flex-shrink-0">
         <span>Administrador</span>
         <ChevronRight className="w-3 h-3" />
         <span>Cuenta</span>
         <ChevronRight className="w-3 h-3" />
-        <span className="text-gray-800 font-medium">Espacio de trabajo</span>
+        <span className="text-[#09090B] font-medium">Espacio de trabajo</span>
       </div>
 
       <div className="flex flex-1 min-h-0 overflow-hidden">
         {/* Settings sub-nav */}
-        <div className="w-52 flex-shrink-0 border-r border-gray-200 py-3 px-2 overflow-y-auto">
+        <div className="w-52 flex-shrink-0 border-r border-[#E4E4E7] py-3 px-2 overflow-y-auto">
           {menuItems.map((item, i) => (
             <div
               key={i}
               className={cn(
                 'flex items-center gap-2.5 px-3 py-2 text-xs rounded-md cursor-pointer mb-0.5',
                 (item as { active?: boolean }).active
-                  ? 'bg-violet-50 text-violet-700 font-semibold border-l-2 border-violet-600'
-                  : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900'
+                  ? 'bg-[#EDE9FE] text-[#1E0A78] font-semibold border-l-2 border-[#3838F9]'
+                  : 'text-[#71717A] hover:bg-[#F4F4F5] hover:text-[#09090B]'
               )}
             >
               <span className="flex-shrink-0">{item.icon}</span>
@@ -586,20 +586,20 @@ function SettingsScreen({
         <div className="flex-1 overflow-y-auto px-8 py-6">
           {/* Header */}
           <div className="flex items-center gap-3 mb-1 flex-wrap">
-            <h1 className="text-xl font-semibold text-gray-900">
+            <h1 className="text-xl font-semibold text-[#09090B]">
               Habilitar herramientas de IA para usuarios
             </h1>
             {aiEnabled ? (
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#DCFCE7] text-[#15803D]">
                 Herramientas de IA activas
               </span>
             ) : (
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-500">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F4F4F5] text-[#71717A]">
                 No habilitadas
               </span>
             )}
           </div>
-          <p className="text-sm text-gray-500 mb-6">
+          <p className="text-sm text-[#71717A] mb-6">
             Gestiona las herramientas de IA para todos los usuarios de tu cuenta.
           </p>
 
@@ -618,12 +618,12 @@ function SettingsScreen({
           </div>
 
           {/* Toggle card */}
-          <div className="border border-gray-200 rounded-lg px-5 py-4 flex items-center justify-between bg-white">
+          <div className="border border-[#E4E4E7] rounded-lg px-5 py-4 flex items-center justify-between bg-white">
             <div>
-              <p className="text-sm font-semibold text-gray-900">
+              <p className="text-sm font-semibold text-[#09090B]">
                 Habilitar herramientas de IA para usuarios
               </p>
-              <p className="text-xs text-gray-500 mt-0.5">
+              <p className="text-xs text-[#71717A] mt-0.5">
                 Permite que todos los usuarios de tu cuenta accedan a las herramientas de IA.
               </p>
             </div>
@@ -632,8 +632,8 @@ function SettingsScreen({
               onCheckedChange={(v) => bothChecked && onToggleAI(v)}
               disabled={!bothChecked}
               className={cn(
-                'inline-flex h-6 w-11 shrink-0 items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40',
-                aiEnabled ? 'bg-violet-600 cursor-pointer' : bothChecked ? 'bg-gray-200 cursor-pointer' : 'bg-gray-200'
+                'inline-flex h-6 w-11 shrink-0 items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3838F9] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40',
+                aiEnabled ? 'bg-[#3838F9] cursor-pointer' : bothChecked ? 'bg-[#E4E4E7] cursor-pointer' : 'bg-[#E4E4E7]'
               )}
             >
               <SwitchPrimitive.Thumb
@@ -657,15 +657,15 @@ function NudgeScreen() {
   const [requested, setRequested] = useState(false)
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 bg-gray-50">
-      <div className="max-w-md w-full bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center shadow-sm">
-        <div className="w-14 h-14 bg-violet-50 rounded-full flex items-center justify-center mb-5">
-          <Lock className="w-7 h-7 text-violet-600" />
+    <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 bg-[#FAFAFA]">
+      <div className="max-w-md w-full bg-white border border-[#E4E4E7] rounded-2xl p-8 flex flex-col items-center text-center shadow-sm">
+        <div className="w-14 h-14 bg-[#F4F3FF] rounded-full flex items-center justify-center mb-5">
+          <Lock className="w-7 h-7 text-[#3838F9]" />
         </div>
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">
+        <h2 className="text-lg font-semibold text-[#09090B] mb-2">
           Herramientas de IA no habilitadas
         </h2>
-        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+        <p className="text-sm text-[#71717A] leading-relaxed mb-6">
           Las herramientas de IA están disponibles para tu cuenta. Para comenzar a usarlas,
           el administrador de tu organización debe aceptar los términos y condiciones y habilitar el acceso.
         </p>
@@ -673,20 +673,20 @@ function NudgeScreen() {
         {!requested ? (
           <button
             onClick={() => setRequested(true)}
-            className="bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors flex items-center gap-2"
+            className="bg-[#3838F9] hover:bg-[#2828D9] text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors flex items-center gap-2"
           >
             <Mail className="w-4 h-4" />
             Solicitar habilitación
           </button>
         ) : (
-          <div className="flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-5 py-2.5 rounded-md border border-emerald-200">
+          <div className="flex items-center gap-2 bg-[#DCFCE7] text-[#15803D] text-sm font-medium px-5 py-2.5 rounded-md border border-[#BBF7D0]">
             <Check className="w-4 h-4" />
             Solicitud enviada — se notificó al administrador
           </div>
         )}
 
         <div className="mt-6 flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 text-left w-full">
-          <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+          <AlertCircle className="w-4 h-4 text-[#CA8A04] mt-0.5 flex-shrink-0" />
           <p className="text-xs text-amber-800">
             Si eres administrador, ve a{' '}
             <strong>Configuraciones → Espacio de trabajo → Habilitar herramientas AI</strong>{' '}
@@ -694,7 +694,7 @@ function NudgeScreen() {
           </p>
         </div>
 
-        <div className="mt-4 flex items-center gap-1.5 text-xs text-gray-400">
+        <div className="mt-4 flex items-center gap-1.5 text-xs text-[#A1A1AA]">
           <Building2 className="w-3.5 h-3.5" />
           <span>Acme Corporation · Plan Enterprise</span>
         </div>
@@ -718,26 +718,26 @@ function DemoBar({
   onToggleRole: () => void
 }) {
   return (
-    <div className="fixed top-3 right-4 z-[60] flex items-center gap-2 bg-white/95 backdrop-blur border border-gray-200 rounded-xl px-3 py-1.5 shadow-lg text-xs">
-      <span className="text-gray-400 font-medium mr-1">Demo:</span>
+    <div className="fixed top-3 right-4 z-[60] flex items-center gap-2 bg-white/95 backdrop-blur border border-[#E4E4E7] rounded-xl px-3 py-1.5 shadow-lg text-xs">
+      <span className="text-[#71717A] font-medium mr-1">Demo:</span>
       {(['home', 'settings', 'nudge'] as Screen[]).map((s) => (
         <button
           key={s}
           onClick={() => onNavigate(s)}
           className={cn(
             'px-2.5 py-1 rounded-md font-semibold transition-colors',
-            active === s ? 'bg-violet-600 text-white' : 'text-gray-500 hover:bg-gray-100'
+            active === s ? 'bg-[#3838F9] text-white' : 'text-[#71717A] hover:bg-[#F4F4F5]'
           )}
         >
           {s === 'home' ? 'Home' : s === 'settings' ? 'Settings' : 'Nudge'}
         </button>
       ))}
-      <div className="w-px h-4 bg-gray-200 mx-0.5" />
+      <div className="w-px h-4 bg-[#E4E4E7] mx-0.5" />
       <button
         onClick={onToggleRole}
         className={cn(
           'px-2.5 py-1 rounded-md font-semibold transition-colors',
-          isAdmin ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
+          isAdmin ? 'bg-[#DCFCE7] text-[#15803D]' : 'bg-[#FEF3C7] text-[#CA8A04]'
         )}
         title="Cambiar rol"
       >
